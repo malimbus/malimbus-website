@@ -1,0 +1,38 @@
+.layout {
+    padding-top: 150px;
+    margin: 0px auto;
+    width: 60%;
+    padding-bottom: 80px;
+    
+}
+
+.header {
+    text-align: center;
+}
+
+.body p {
+    text-align: left;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  /* .author h3:hover {
+      color: #0daa8b
+  } */
+
+  .featuredImage {
+        width: 100%;
+        height: auto;
+  }
+
+
+@media all and (max-width: 768px) {
+    .layout {
+        width: 80%;
+    }
+}

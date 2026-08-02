@@ -1,0 +1,60 @@
+
+.profilePicture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.fileUpload label {
+  display: flex;
+  background-color: rgb(235, 235, 235);
+  color: rgb(65, 65, 65);
+  border: 1px gray dashed;
+  padding: 0.8rem 0rem 0rem 0.9rem;
+  font-family: sans-serif;
+  border-radius: 100%;
+  text-align: center;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+}
+  
+  .fileUpload label:hover {
+    background-color: rgb(228, 228, 228);
+  }
+  
+  .upload {
+    display: flex;
+    border: solid 1px rgb(175, 175, 175);
+    width: 90%;
+    margin: 20px;
+    border-radius: 0.7rem;
+  }
+
+
+  .uploads {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .upload p {
+    width: 80%;
+    padding-left: 15px;
+  }
+  
+  .profilePic {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 6px rgb(241, 241, 241) solid;
+    
+  }
+
+  .profilePicContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,0 +1,112 @@
+.featuresContainer {
+  margin: 100px auto;
+  margin-bottom: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgThumbnail {
+  width: 100%;
+  border-radius: 8px 8px 0px 0px;
+  object-fit: cover;
+  height: 30vh;
+}
+
+/*
+  AUTO GRID
+  Set the minimum item size with `--auto-grid-min-size` and you'll
+  get a fully responsive grid with no media queries.
+*/
+.autoGrid {
+  --auto-grid-min-size: 16rem;
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size), 1fr)
+  );
+  grid-gap: 1rem;
+}
+
+.items {
+  width: 100%;
+}
+
+.paragraph {
+  width: 100%;
+  padding-right: 30px;
+}
+
+.paragraph p {
+  text-align: left;
+}
+
+.listItem {
+  padding: 0rem 0rem 2rem 0rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  list-style-type: none;
+  border: 1px solid rgb(235, 235, 235);
+  box-shadow: rgb(38 78 118 / 12%) 0px 4px 10px;
+}
+
+.listItem:hover {
+  box-shadow: rgb(38 78 118 / 12%) 0px 4px 10px;
+  border: 1px solid #b3b3b3;
+  cursor: pointer;
+}
+
+.listItem p {
+  text-align: left;
+}
+
+.listItem h2 {
+  text-align: center;
+  font-size: 16px;
+  color: rgb(71, 71, 71);
+}
+
+.listItem:hover {
+  box-shadow: rgb(38 78 118 / 12%) 0px 4px 10px;
+  cursor: pointer;
+}
+
+.hrLine {
+  width: 90%;
+  margin: 40px 0px;
+  border-top: 1px 0px 0px 0px solid rgb(218, 218, 218);
+  border-bottom: 0px;
+  height: 1px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media all and (max-width: 768px) {
+  .featuresContainer {
+    margin: 100px auto;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .items {
+    width: 100%;
+  }
+
+  .paragraph {
+    width: 100%;
+    padding: 0px 10px;
+    padding-bottom: 50px;
+  }
+
+
+  .imgThumbnail {
+    height: 30vh;
+  }
+}

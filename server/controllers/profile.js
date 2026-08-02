@@ -1,0 +1,162 @@
+import express from 'express';
+import mongoose from 'mongoose';
+
+import ProfileModel from '../models/profile.js';
+
+const router = express.Router();
+
+export const getProfiles = async (req, res) => { 
+  try {
+      const allProfiles = await ProfileModel.find().sort({ _id: -1 });
+              
+      res.status(200).json(allProfiles);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+}
+
+export const getProfile = async (req, res) => { 
+  const { id } = req.params;
+
+  try {
+      const profile = await ProfileModel.findById(id);
+      
+      res.status(200).json(profile);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+}
+
+export const createProfile = async (req, res) => {
+  const {
+    name,
+    email,
+    userId, 
+    address,
+    profilePicture,
+    phone,
+    currentLocation,
+    memberCategory,
+    placeOfWork,
+    title,
+   } = req.body;
+  
+  
+  const newProfile = new ProfileModel({
+    name,
+    email,
+    userId, 
+    address,
+    profilePicture,
+    phone,
+    currentLocation,
+    memberCategory,
+    placeOfWork,
+    title,
+    createdAt: new Date().toISOString() 
+  })
+
+  try {
+      await newProfile.save();
+
+      res.status(201).json(newProfile );
+  } catch (error) {
+      res.status(409).json({ message: error.message });
+  }
+}
+
+
+
+export const getProfilesByUser = async (req, res) => {
+  const { searchQuery } = req.query;
+
+  try {
+      // const email = new RegExp(searchQuery, "i");
+
+      const profile = await ProfileModel.find({ email: searchQuery });
+
+      res.json({ data: profile });
+  } catch (error) {    
+      res.status(404).json({ message: error.message });
+  }
+}
+
+
+
+export const getProfilesBySearch = async (req, res) => {
+  const { searchQuery } = req.query;
+
+  try {
+      const name = new RegExp(searchQuery, "i");
+      const yearOfGraduation = new RegExp(searchQuery, "i");
+
+      const profiles = await ProfileModel.find({ $or: [ { name }, { yearOfGraduation } ] });
+
+      res.json({ data: profiles });
+  } catch (error) {    
+      res.status(404).json({ message: error.message });
+  }
+}
+
+
+
+
+export const updateProfile = async (req, res) => {
+    const { id } = req.params;
+    const {
+      name,
+      email,
+      userId, 
+      address,
+      profilePicture,
+      phone,
+      currentLocation,
+      memberCategory,
+      placeOfWork,
+      title,
+     } = req.body;
+    
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No user with id: ${id}`);
+  
+    const updatedProfile = { 
+      name,
+      email,
+      userId, 
+      address,
+      profilePicture,
+      phone,
+      currentLocation,
+      memberCategory,
+      placeOfWork,
+      title,
+      _id: id
+     };
+  
+    await ProfileModel.findByIdAndUpdate(id, updatedProfile, { new: true });
+  
+    res.json(updatedProfile);
+  }
+
+
+  export const deleteProfile = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No profile with id: ${id}`);
+
+    await ProfileModel.findByIdAndRemove(id);
+
+    res.json({ message: "Profile deleted successfully." });
+}
+
+
+
+// // Function call
+// ProfileModel.insertMany([
+//   { name: 'Gourav', age: 20},
+//   { name: 'Kartik', age: 20},
+//   { name: 'Niharika', age: 20}
+// ]).then(function(){
+//   console.log("Data inserted")  // Success
+// }).catch(function(error){
+//   console.log(error)      // Failure
+// });

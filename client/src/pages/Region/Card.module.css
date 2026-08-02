@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.card {
+    text-align: left;
+    border: solid rgb(231, 231, 231) 1px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: white;
+    display: flex;
+}
+
+.title {
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 21px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    
+}
+
+
+.title:hover {
+    color: #421405;
+}
+
+.card p {
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+}
+
+.year {
+    color: gray;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 14px;
+    word-wrap: break-word;  
+    
+}
+
+.user:hover {
+    text-decoration: underline;
+}
+
+@media all and (max-width: 768px) {
+    
+
+  
+  }

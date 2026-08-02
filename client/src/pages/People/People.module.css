@@ -1,0 +1,124 @@
+.featuresContainer {
+    margin: 0px auto;
+    width: 100%;
+    padding: 120px 60px 20px 60px;
+  
+   
+  }
+  
+  
+  .layout {
+    padding-top: 160px;
+    margin: 0px auto;
+    background-color: rgb(250, 250, 250);
+    
+}
+
+.header {
+    text-align: center;
+    width: 55%;
+    margin: 30px auto;
+    padding-bottom: 30px;
+}
+
+.header input {
+    padding: 18px;
+    font-size: 16px;
+    border: solid 1px gray;
+    border-radius: 50px 0px 0px 50px;
+    width: 80%;
+    outline: none;
+    margin: 25px 0px;
+    
+}
+
+.header input:focus {
+    border: solid 1px rgb(0, 148, 79);
+}
+
+.searchBar {
+    display: flex;
+}
+
+.searchBar button {
+    padding: 18px;
+    margin: 25px 0px;
+    border-radius: 0px 50px 50px 0px;
+    border: solid #1ABC9C 1px;
+    cursor: pointer;
+    width: 20%;
+    background-color: #1ABC9C;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    color: white;
+    font-size: 16px;
+}
+
+.searchBar button:hover {
+    background-color: #099b7e;
+}
+
+.thumbnails {
+    width: 90%;
+    margin: 0px auto;
+}
+
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 0px;
+    
+}
+
+
+.pageNum {
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.bg {
+    background-color: #1ABC9C;
+}
+
+.pageNum:focus {
+    background-color: #1ABC9C;
+    color: white;
+}
+
+  .paragraph {
+    width: 70%;
+    padding-bottom: 40px;
+    text-align: center;
+    margin: 0px auto;
+  }
+  
+  
+  
+
+  
+  
+  @media all and (max-width: 768px) {
+    .featuresContainer {
+      margin: 100px auto;
+      width: 100%;
+      display: block;
+    }
+    .paragraph {
+      width: 100%;
+    }
+
+    .header {
+      width: 90%;
+
+  }
+  
+  }
+  

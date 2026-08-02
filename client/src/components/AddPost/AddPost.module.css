@@ -1,0 +1,30 @@
+.formContainer {
+  width: 70%;
+  margin: 0px auto;
+  font-family: "DM Sans", sans-serif !important;
+}
+
+.postTypes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  flex-wrap: wrap;
+}
+
+.viewPdf {
+  padding: 20px;
+  border: solid 1px red;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+
+.viewPdf:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+
+.files {
+  display: flex;
+}

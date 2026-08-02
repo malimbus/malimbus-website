@@ -1,0 +1,267 @@
+.featuresContainer {
+    margin: 0px auto;
+    width: 90%;
+    padding-top: 130px;
+   
+   
+  }
+  
+  /*
+      AUTO GRID
+      Set the minimum item size with `--auto-grid-min-size` and you'll
+      get a fully responsive grid with no media queries.
+    */
+  .autoGrid {
+    --auto-grid-min-size: 16rem;
+  
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--auto-grid-min-size), 1fr)
+    );
+    grid-gap: 1rem;
+  }
+  
+  .items {
+    width: 100%;
+  }
+  
+  .paragraph {
+    width: 60%;
+    text-align: center;
+    margin: 0px auto;
+    padding: 20px;
+    padding-bottom: 50px;
+  }
+  
+  .listItem {
+    padding: 0rem 0rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    list-style-type: none;
+    text-align: left;
+    box-shadow: rgb(38 78 118 / 12%) 0px 4px 10px;
+    border-radius: 8px;
+  }
+  
+  .listItem h2 {
+    text-align: center;
+    padding: 5px 25px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .listItem h2:hover {
+    color: #1abc9c;
+  }
+  
+  .listItem p {
+    text-align: center;
+    padding: 10px 15px;
+    text-align: left;
+  }
+  
+  .listItem:hover {
+    box-shadow: rgb(38 78 118 / 12%) 0px 4px 10px;
+   
+  }
+  
+  .imgThumbnail {
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+    object-fit: cover;
+    height: 30vh;
+  }
+
+  
+
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 0px;
+    
+}
+
+
+.pageNum {
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.bg {
+    background-color: #1ABC9C;
+}
+
+.pageNum:focus {
+    background-color: #1ABC9C;
+    color: white;
+}
+
+  
+  @media all and (max-width: 768px) {
+    .featuresContainer {
+      width: 90%;
+      display: block;
+    }
+  
+    .items {
+      width: 100%;
+    }
+  
+    .paragraph {
+      width: 100%;
+     
+    }
+  
+    .imgThumbnail {
+      height: 50vh;
+    }
+  }
+
+
+
+
+
+
+
+
+  /* @import url(https://fonts.googleapis.com/css?family=Raleway); */
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+/* body{
+  background: #f9f9f9;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+} */
+
+.mainTitle{
+  color: #2d2d2d;
+  text-align: center;
+  text-transform: capitalize;
+  /* padding: 0.7em 0; */
+}
+
+.container{
+  float: left;
+  width: 100%;
+}
+@media screen and (max-width: 640px){
+  .container{
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .container{
+    width: 100%
+  }
+}
+
+.container .title{
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  /* max-width: 400px; */
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .contentOverlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 97%;
+  width: 100%;
+  border-radius: 8px 8px 0px 0px;
+  /* left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0; */
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .contentOverlay{
+  opacity: 1;
+}
+
+.contentImage{
+  width: 100%;
+}
+
+.contentDetails {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em; 
+  padding-right: 1em;
+  width: 100%;
+  margin: 0px auto;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .contentDetails{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.contentDetails h3{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.contentDetails p{
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeInBottom{
+  top: 80%;
+}
+
+.fadeInTop{
+  top: 20%;
+}
+
+.fadeInLeft{
+  left: 20%;
+}
+
+.fadeInRight{
+  left: 80%;
+}
+  

@@ -1,0 +1,326 @@
+.container {
+  text-align: center;
+}
+
+.warningContainer {
+  padding: 100px 200px;
+  margin: 100px;
+  margin: 0px auto;
+  width: 80%;
+ 
+
+}
+
+.warningContent {
+
+  padding: 50px;
+  border: solid 1px gray;
+  border-radius: 6px;
+}
+
+.containerHead {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 220px;
+
+  /* background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(12, 12, 29, 0.6306897759103641) 38%,
+    rgba(0, 212, 255, 1) 100%
+  ); */
+}
+
+.menu p {
+  padding: 0px;
+}
+
+.profilePicture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.works {
+  padding: 10px;
+  border-top: 1px solid rgb(226, 226, 226);
+  border-bottom: 1px solid rgb(226, 226, 226);
+  width: 50%;
+  margin: 10px auto;
+  color: gray;
+}
+
+.profilePicture img {
+  height: 225px;
+  width: 225px;
+  border-radius: 100%;
+  margin-top: -60px;
+  object-fit: cover;
+  border: solid 10px rgb(238, 237, 237);
+}
+
+.containerBody {
+  padding-left: 20px;
+}
+
+.name {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  padding-top: 40px;
+}
+
+
+.location {
+  color: rgb(12, 114, 46);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio p {
+  padding: 20px;
+  width: 50%;
+  margin: 0px auto;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0px auto;
+  padding-bottom: 30px;
+}
+
+.stats p {
+  color: gray;
+  font-size: 12px;
+  margin-bottom: -10px;
+  text-transform: uppercase;
+}
+
+.statBox {
+  margin: 10px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ADD NEW DROPDOWN BUTTON */
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+}
+
+.ddButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px 30px 10px 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.ddButton:after {
+  /* content: ""; */
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+.ddButton:hover {
+  background-color: #eeeeee;
+}
+
+.ddInput {
+  display: none;
+}
+
+.ddMenu {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  list-style-type: none;
+}
+
+.ddInput + .ddMenu {
+  display: none;
+}
+
+.ddInput:checked + .ddMenu {
+  display: block;
+}
+
+.ddMenu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ddMenu li:hover {
+  background-color: #f6f6f6;
+}
+
+.ddMenu li a {
+  display: block;
+  margin: -10px -20px;
+  padding: 10px 20px;
+}
+
+.ddMenu li.divider {
+  padding: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.edit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.editButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gray;
+  border-radius: 50px;
+  padding: 12px 30px 12px 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: 10px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07);
+  
+}
+
+.editButton:hover {
+  background-color: #1abc9c;
+  border: solid 1px white;
+  
+}
+
+
+.subscribeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  padding: 12px 30px 12px 20px;
+  background-color: #e75a2f;
+  color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: 10px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07);
+  
+}
+
+
+.subscribeButton:hover {
+  background-color: #1abc9c;
+  border: solid 1px white;
+  color: #000000;
+  
+}
+
+
+
+.contactButton {
+  padding: 9px 13px;
+  border-radius: 50px;
+  border: solid 1px gray;
+  cursor: pointer;
+  font-size: 12px;
+  background-color: white;
+  margin: 8px;
+  
+
+}
+
+.contactButton:hover {
+  background-color: #3E6947;
+  color: white;
+  border: solid 1px #3E6947;
+}
+
+.contactButtons {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media all and (max-width: 768px) {
+  .bio p {
+    padding: 20px;
+    width: 95%;
+    margin: 0px auto;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  
+.stats {
+  width: 95%;
+}
+
+.warningContainer {
+  padding: 0px;
+  padding-top: 100px;
+  margin: 0px auto;
+  width: 100%;
+ 
+
+}
+
+.warningContent {
+  padding: 10px;
+  border: solid 1px gray;
+  border-radius: 6px;
+}
+
+}

@@ -1,0 +1,13 @@
+
+.cardContainer {
+    width: 70%;
+    margin: 0px auto;
+}
+
+@media all and (max-width: 768px) {
+    .cardContainer {
+      margin: 5px auto;
+      width: 97%;
+      display: block;
+    }
+}

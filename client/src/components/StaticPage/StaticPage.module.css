@@ -1,0 +1,53 @@
+.layout {
+    margin: 0px auto;
+    width: 100%;
+    padding-bottom: 80px;
+    
+}
+
+.header {
+    text-align: center;
+}
+
+.body {
+    width: 70%;
+    margin: 0px auto;
+    text-align: left;
+    line-height: 30px !important;
+}
+
+.body p {
+    text-align: left;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  /* .author h3:hover {
+      color: #0daa8b
+  } */
+
+  .featuredImage {
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
+  }
+
+
+@media all and (max-width: 768px) {
+    .layout {
+        width: 100%;
+    }
+    
+.body {
+    width: 90%;
+    line-height: 30px;
+}
+
+
+
+}

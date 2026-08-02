@@ -1,0 +1,124 @@
+/* .featuresContainer {
+    margin: 0px auto;
+    width: 100%;
+    padding: 0px 60px 20px 60px;
+  
+   
+  } */
+  
+  /*
+      AUTO GRID
+      Set the minimum item size with `--auto-grid-min-size` and you'll
+      get a fully responsive grid with no media queries.
+    */
+  .autoGrid {
+    --auto-grid-min-size: 16rem;
+  
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--auto-grid-min-size), 1fr)
+    );
+    grid-gap: 0.5rem;
+  }
+  
+  .items {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  
+  
+  .listItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0rem 1rem;
+    text-align: left;
+    list-style-type: none;
+    text-align: left !important;
+    border-bottom: 1px solid rgb(184, 184, 184);
+    border-radius: 4px;
+    background-color: white;
+  }
+
+  .text p {
+    color: gray;
+    font-size: gray;
+    text-align: left;
+    font-size: 13px;
+    line-height: 15px;
+    
+  }
+
+  .text h2 {
+    text-align: left;
+  }
+  
+  .listItem h2 {
+    text-align: left;
+    padding: 15px 25px 0px 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    font-size: 14px;
+    line-height: 23px;
+    cursor: pointer;
+  }
+  
+  
+  .listItem p {
+    text-align: left;
+    padding: 0px 25px 10px 25px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    cursor: pointer;
+    color: rgb(170, 170, 170);
+  }
+  
+  .listItem:hover {
+    background-color: #3e6947;
+    color: white;
+   
+  }
+  
+  .listItem:hover h2 {
+    color: white;
+   
+  }
+  
+
+  
+  .imgThumbnail {
+    margin: 0px auto;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 25px;
+    height: 25px;
+  }
+  .imgThumbnail:hover {
+    filter: grayscale(100%);
+    cursor: pointer;
+  }
+
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+
+  @media all and (max-width: 768px) {
+  
+    .items {
+      width: 100%;
+    }
+
+    .imgThumbnail {
+      width: 20px;
+      height: 20px;
+    }
+  
+   
+  }
+  

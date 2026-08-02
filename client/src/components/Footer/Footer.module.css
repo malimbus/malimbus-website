@@ -1,0 +1,127 @@
+.featuresContainer {
+  margin: 0px auto;
+  padding-top: 70px;
+  padding-left: 20px;
+  background-color: rgb(24, 25, 32);
+}
+
+/*
+      AUTO GRID
+      Set the minimum item size with `--auto-grid-min-size` and you'll
+      get a fully responsive grid with no media queries.
+    */
+.autoGrid {
+  --auto-grid-min-size: 16rem;
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size), 1fr)
+  );
+  grid-gap: 1rem;
+}
+
+.items {
+  width: 95%;
+  margin: 0px auto;
+}
+
+.footerBottom {
+  width: 100%;
+  padding: 30px 10%;
+  text-align: center;
+}
+
+.listItem {
+  padding: 1rem 0rem;
+  text-align: center;
+  font-size: 0.9rem;
+  list-style-type: none;
+  text-align: left !important;
+  font-family: "Roboto", sans-serif;
+  line-height: 35px;
+
+  /* box-shadow: rgb(38 78 118 / 12%) 0px 4px 10px;
+  border-radius: 8px; */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listItem h2 {
+  text-align: center;
+  padding: 15px 0px;
+  text-align: left;
+  font-size: 20px;
+  line-height: 30px;
+  color: gray;
+}
+
+/* .listItem h2:hover {
+  color: #1abc9c;
+} */
+
+.listItem p {
+  text-align: center;
+  padding: 10px 25px;
+  text-align: left;
+ 
+}
+
+.listItem li {
+  list-style-type: none;
+  color: gray ;
+}
+
+.hrLine {
+  width: 100%;
+  border: 1px solid rgb(83, 83, 83);
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+ 
+}
+
+.hrLine p {
+  color: gray;
+  padding-top: 20px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgThumbnail {
+  width: 60%;
+  object-fit: cover;
+}
+/* .imgThumbnail:hover {
+  filter: grayscale(100%);
+} */
+
+.authorAndDate h3 {
+  color: #0d9b7f;
+}
+
+@media all and (max-width: 768px) {
+  .featuresContainer {
+    padding: 20px;
+    width: 100%;
+    display: block;
+  }
+
+  .items {
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  .paragraph {
+    width: 100%;
+    padding-left: 50px;
+  }
+}
