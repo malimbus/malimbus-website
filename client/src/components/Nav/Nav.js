@@ -80,7 +80,6 @@ return (
         <ul className="drop-menu">
           <li><Link to="/about" onClick={width < 957 ? () => {window.location.href="/about"} : null} >Overview</Link></li>
           <li><Link to="/council" onClick={width < 957 ? () => {window.location.href="/council"} : null} >Council Members</Link></li>
-          <li><Link to="/membership" onClick={width < 957 ? () => {window.location.href="/membership"} : null}>Join WAOS</Link></li>
         </ul>
       </li>
 
@@ -97,7 +96,11 @@ return (
       </li>
 
       <li><Link to="/news" onClick={width < 957 ? () => {window.location.href="/news"} : null } >News</Link></li>
-
+      <li>
+  <Link to="/membership">
+    Join WAOS
+  </Link>
+</li>
       {(user && user?.result?.role === 'admin') && (
         <li>
         <Link to="#" className="desktop-item">Admin</Link>
