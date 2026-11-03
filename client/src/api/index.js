@@ -22,7 +22,19 @@ export const fetchPublications = (page) => API.get(`/posts/publications?page=${p
 export const fetchDocuments = (page) => API.get(`/posts/documents?page=${page}`);
 export const fetchTheses = (page) => API.get(`/posts/theses?page=${page}`);
 
-export const fetchPostsBySearch = (searchQuery) => API.get(`/posts/search?searchQuery=${searchQuery.search || searchQuery.year || searchQuery.region ||'none'}`);
+export const fetchPostsBySearch = (searchQuery = {}) => {
+  const params = {};
+
+  if (searchQuery.search?.trim()) {
+    params.searchQuery = searchQuery.search.trim();
+  }
+
+  if (searchQuery.year) {
+    params.year = String(searchQuery.year);
+  }
+
+  return API.get('/posts/search', { params });
+};
 export const fetchPostsByUser = (searchQuery) => API.get(`/posts/user?searchQuery=${searchQuery.search}`);
 export const createPost = (newPost) => API.post('/posts', newPost);
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);

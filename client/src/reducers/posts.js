@@ -54,8 +54,15 @@ const posts = (state = { isLoading: true, message: false, posts: [], post: {titl
       
     case FETCH_BY_USER:
       return {...state, posts: action.payload }
-    case FETCH_BY_SEARCH:
-        return { ...state, posts: action.payload.data };
+    
+case FETCH_BY_SEARCH:
+  return {
+    ...state,
+    posts: action.payload.data,
+    currentPage: action.payload.currentPage,
+    numberOfPages: action.payload.numberOfPages,
+    total: action.payload.total
+  };
     case FETCH_POST:
       return {...state, post: action.payload}
     case CREATE:

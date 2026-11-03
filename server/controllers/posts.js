@@ -154,22 +154,62 @@ export const getPostsByUser = async (req, res) => {
 
 
 export const getPostsBySearch = async (req, res) => {
-    const { searchQuery } = req.query;
-
     try {
-        
-        const title = new RegExp(searchQuery, "i");
-        const year = new RegExp(searchQuery, "i");
-        const region = searchQuery
+        const searchQuery = String(req.query.searchQuery || '').trim();
+        const year = String(req.query.year || '').trim();
 
-        const posts = await PostModel.find({ $or: [ {title}, { year }, { region } ] }).sort({ year: -1});
+        const filter = {
+            postType: 'publication',
+            isApproved: true
+        };
 
-        res.json({ data: posts });
-    } catch (error) {    
-        res.status(404).json({ message: error.message });
+        // Filter by publication year when supplied
+        if (year) {
+            if (!/^\d{4}$/.test(year)) {
+                return res.status(400).json({
+                    message: 'Please provide a valid four-digit publication year.'
+                });
+            }
+
+            filter.year = year;
+        }
+
+        // Search publication titles, authors and existing metadata
+        if (searchQuery) {
+            const escapedQuery = searchQuery.replace(
+                /[.*+?^${}()|[\]\\]/g,
+                '\\$&'
+            );
+
+            const searchRegex = new RegExp(escapedQuery, 'i');
+
+            filter.$or = [
+                { title: searchRegex },
+                { authors: searchRegex },
+                { author: searchRegex },
+                { content: searchRegex },
+                { region: searchRegex },
+                { year: searchRegex }
+            ];
+        }
+
+        const posts = await PostModel.find(filter)
+            .sort({ year: -1, _id: -1 });
+
+        res.status(200).json({
+            data: posts,
+            currentPage: 0,
+            numberOfPages: 1
+        });
+
+    } catch (error) {
+        console.error('Publication search error:', error);
+
+        res.status(500).json({
+            message: 'Unable to search publications.'
+        });
     }
-}
-
+};
 
 export const updatePost = async (req, res) => {
     const { id } = req.params;

@@ -134,15 +134,43 @@ export const getPostsByUser =(searchQuery) => async (dispatch) => {
   }
 }
 
-export const getPostsBySearch = (searchQuery) => async (dispatch) => {
-  try {
-    dispatch({ type: START_LOADING });
-    const { data: { data } } = await api.fetchPostsBySearch(searchQuery);
 
-    dispatch({ type: FETCH_BY_SEARCH, payload: { data } });
-    dispatch({ type: END_LOADING });
+export const getPostsBySearch = (searchQuery) => async (dispatch) => {
+  dispatch({ type: START_LOADING });
+
+  try {
+    const response = await api.fetchPostsBySearch(searchQuery);
+
+    const {
+      data = [],
+      currentPage = 0,
+      numberOfPages = 1,
+      total
+    } = response.data;
+
+    dispatch({
+      type: FETCH_BY_SEARCH,
+      payload: {
+        data,
+        currentPage,
+        numberOfPages,
+        total: total ?? data.length
+      }
+    });
   } catch (error) {
-    console.log(error);
+    console.error('Publication search failed:', error);
+
+    dispatch({
+      type: FETCH_BY_SEARCH,
+      payload: {
+        data: [],
+        currentPage: 0,
+        numberOfPages: 1,
+        total: 0
+      }
+    });
+  } finally {
+    dispatch({ type: END_LOADING });
   }
 };
 
