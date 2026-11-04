@@ -110,26 +110,42 @@ useEffect(() => {
 },[dispatch])
 
 
-const handleSubmit =(e)=> {
-    e.preventDefault()
-    if(currentId) {
-      dispatch(updatePost(currentId, postData, openSnackbar)) 
-     
-    } else {
-      dispatch(createPost({
-        ...postData, 
-        author: user?.result?.name, 
-        userId: user?.result?._id, 
-        email: user?.result?.email, 
-        avatar: currentUser[0]?.profilePicture
-      }, openSnackbar
-    ))
-      
-    }
-    clear()
-    handleClose()
-    // window.location.reload()
-}
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  // Prevent news articles from being submitted without a cover image
+  if (
+    postData.postType === 'news' &&
+    (!postData.fileUrl || !postData.fileUrl.trim())
+  ) {
+    alert(
+      'Please upload a cover photograph and wait for the upload to finish before submitting.'
+    );
+    return;
+  }
+
+  if (currentId) {
+    dispatch(updatePost(currentId, postData, openSnackbar));
+  } else {
+    dispatch(
+      createPost(
+        {
+          ...postData,
+          author: user?.result?.name,
+          userId: user?.result?._id,
+          email: user?.result?.email,
+          avatar: currentUser[0]?.profilePicture,
+        },
+        openSnackbar
+      )
+    );
+  }
+
+  clear();
+  handleClose();
+  // window.location.reload();
+};
 
   const clear =() => {
     setCurrentId(null) 
